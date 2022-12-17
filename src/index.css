@@ -24,9 +24,9 @@ code {
     visibility: visible;
   }
 
-  #section-to-print {
-    position: absolute;
-    left: 0;
-    top: 0;
+  @page {
+    size: auto;
+    margin: 0;
   }
+
 }

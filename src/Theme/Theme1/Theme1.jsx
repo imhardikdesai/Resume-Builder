@@ -1,5 +1,6 @@
 import React from 'react'
-import { Heading, Text } from '@chakra-ui/react'
+import { Heading, Text, Box } from '@chakra-ui/react'
+import './theme1.css'
 
 const Theme1 = () => {
     return (
@@ -18,9 +19,23 @@ const Theme1 = () => {
                 </header>
 
                 <section id="skills">
-                    <Heading bg={'#D2E4E1'} as='h3' size='md' p={2}>
+                    <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                         TECHNICAL SKILLS
                     </Heading>
+
+                    <Box id='skills-set' className='d-flex justify-content-between align-items-center pt-2'>
+                        <div className='skillBox'>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </div>
+                        <div className='skillBox'>
+                            <li>React</li>
+                            <li>Node</li>
+                            <li>Express</li>
+                        </div>
+                    </Box>
+
                 </section>
 
             </div>
