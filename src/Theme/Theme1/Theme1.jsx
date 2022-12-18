@@ -3,6 +3,7 @@ import { Heading, Text, Box } from '@chakra-ui/react'
 import './theme1.css'
 
 const Theme1 = () => {
+
     return (
         <>
             <div id="theme1">
@@ -124,7 +125,7 @@ const Theme1 = () => {
                 {/* Skills Part  */}
                 <section id="awards" className='my-2'>
                     <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
-                    AWARDS & ACHIEVEMENTS
+                        AWARDS & ACHIEVEMENTS
                     </Heading>
 
                     <Box id='award-set' className='basic-set d-flex justify-content-between align-items-center'>
