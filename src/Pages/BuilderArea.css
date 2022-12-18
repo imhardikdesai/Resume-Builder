@@ -1,0 +1,6 @@
+/* media quires */
+@media only screen and (max-width: 1150px) {
+    #main-box {
+        flex-direction: column !important;
+    }
+}

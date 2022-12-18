@@ -1,6 +1,9 @@
 import React from 'react'
-import { Heading, Text, Box } from '@chakra-ui/react'
+import { Heading, Text, Box, Badge } from '@chakra-ui/react'
 import './theme1.css'
+import { ImLocation } from 'react-icons/im'
+import { GrMail } from 'react-icons/gr'
+import { BsFillTelephoneFill } from 'react-icons/bs'
 
 const Theme1 = () => {
 
@@ -13,9 +16,16 @@ const Theme1 = () => {
                         <Heading as='h2' size='2xl' noOfLines={1}>
                             Desai Hardik
                         </Heading>
-                        <Text fontSize='md' className='text-muted my-1'>
-                            Address | Mail | Website
+                        <Text fontSize='md' className='text-muted my-1 '>
+                            <span className='mx-2'><ImLocation className='d-inline mx-1' />Chital,Amreli,Gujarat</span>|
+                            <span className='mx-2'><GrMail className='d-inline mx-1' />hp676913@gmail.com</span>|
+                            <span className='mx-2'><BsFillTelephoneFill className='d-inline mx-1' />+91 6352604118</span>
                         </Text>
+                        {/* <Text fontSize='md' className='text-muted my-1 d-flex align-items-center justify-content-center'>
+                            <div><ImLocation className='d-inline' />Address</div>
+                            <div>Mail</div>
+                            <div>Phone</div>
+                        </Text> */}
                         <Heading as='h3' size='md' className='mt-1 mb-2'>
                             SOFTWARE ENGINEER
                         </Heading>
@@ -26,21 +36,12 @@ const Theme1 = () => {
                             TECHNICAL SKILLS
                         </Heading>
 
-                        <Box id='skills-set' className='basic-set d-flex justify-content-between align-items-center'>
+                        <Box id='skills-set' className='basic-set d-flex justify-content-center align-items-center'>
                             <div className='skillBox'>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                            </div>
-                            <div className='skillBox'>
-                                <li>React</li>
-                                <li>Node</li>
-                                <li>Express</li>
-                            </div>
-                            <div className='skillBox'>
-                                <li>Python</li>
-                                <li>Java</li>
-                                <li>SQL</li>
+                                <Badge className='skill-badge' variant='solid'>React</Badge>
+                                <Badge className='skill-badge' variant='solid'>Node</Badge>
+                                <Badge className='skill-badge' variant='solid'>Express</Badge>
+                                <Badge className='skill-badge' variant='solid'>MongoDB</Badge>
                             </div>
                         </Box>
                     </section>

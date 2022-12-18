@@ -5,6 +5,18 @@
 
 
 /* Skills Set  */
+.skill-badge {
+  background-color: #D2E4E1 !important;
+  color: black !important;
+  margin: 5px;
+}
+
+.skillBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 .basic-set {
   /* width: 61%; */
