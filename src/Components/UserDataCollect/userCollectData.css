@@ -1,0 +1,10 @@
+#form-collect {
+    min-width: 33%;
+    margin: 0px 5px 10px 5px;
+}
+
+#theme-box-border {
+    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.61);
+    -webkit-box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.61);
+  }

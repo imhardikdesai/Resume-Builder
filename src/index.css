@@ -19,11 +19,20 @@ code {
     visibility: hidden;
   }
 
+  #form-collect {
+    display: none;
+  }
+
+  #navbar {
+    display: none;
+  }
+
   #section-to-print,
   #section-to-print * {
     visibility: visible;
   }
 }
+
 @page {
   size: auto;
   margin: 0;

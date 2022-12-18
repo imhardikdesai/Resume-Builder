@@ -3,6 +3,7 @@
   margin: auto;
 } */
 
+
 /* Skills Set  */
 
 .basic-set {
@@ -24,4 +25,11 @@
 .sub-title {
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+/* media quires */
+@media only screen and (max-width: 450px) {
+  .basic-set {
+    margin: 0rem 1rem;
+  }
 }
