@@ -23,10 +23,8 @@ code {
   #section-to-print * {
     visibility: visible;
   }
-
-  @page {
-    size: auto;
-    margin: 0;
-  }
-
+}
+@page {
+  size: auto;
+  margin: 0;
 }

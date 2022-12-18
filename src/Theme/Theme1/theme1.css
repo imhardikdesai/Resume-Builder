@@ -5,7 +5,23 @@
 
 /* Skills Set  */
 
-#skills-set {
-  width: 61%;
-  margin: 0rem 10rem;
+.basic-set {
+  /* width: 61%; */
+  margin: 0rem 5rem;
+  padding-top: 10px;
+}
+
+
+/* Utility  */
+.subBox {
+  margin-bottom: 15px;
+}
+
+.sub-details {
+  padding: 0px 10px;
+}
+
+.sub-title {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
