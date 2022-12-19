@@ -3,29 +3,40 @@ import './userCollectData.css'
 import { FormControl, Input, Heading, Textarea, Button } from '@chakra-ui/react'
 
 const UserDataCollect = () => {
+
     const [projectCount, setProjectCount] = useState(0)
+    const [projArr, setProjArr] = useState([])
     const [projectData, setProjectData] = useState([])
 
+    const handleChange = (e) => {
+        setProjectData({ ...projectData, [e.target.name]: e.target.value })
+    }
     const handleProjectClick = (e) => {
         e.preventDefault();
         let i = projectCount
         ++i;
-        setProjectCount(i)
         const template = (
             <>
                 <FormControl isRequired className='my-2'>
-                    <Input type={'text'} placeholder='Project Title' />
+                    <Input name={`pTitle${i}`} onChange={handleChange} type={'text'} placeholder='Enter appropriate Title' />
                 </FormControl>
                 <FormControl isRequired className='my-2'>
-                    <Textarea placeholder='Description' />
+                    <Textarea name={`pDescription${i}`} onChange={handleChange} placeholder='Use comma to separate Description' />
                 </FormControl>
             </>
         )
-        const empArray = projectData;
-        empArray.push(template);
-        setProjectData(empArray)
+        let arr = projArr
+        arr.push(template)
+        setProjArr(arr)
+        setProjectCount(i)
     }
 
+    const handleEducationClick = (e) => {
+
+    }
+    const handleWorkClick = (e) => {
+
+    }
     return (
         <>
             <div id="form-collect">
@@ -72,12 +83,27 @@ const UserDataCollect = () => {
                     </Heading>
                     <hr />
                     <Button onClick={handleProjectClick} className='my-3 w-100' colorScheme='teal' variant='solid'>Add Projects</Button>
-                    {/* <FormControl isRequired className='my-2'>
-                        <Input type={'text'} placeholder='Project Title' />
-                    </FormControl>
-                    <FormControl isRequired className='my-2'>
-                        <Textarea placeholder='Description' />
-                    </FormControl> */}
+                    {
+                        (projectCount > 0) ? projArr.map((element, index) => <div key={index}>{element}</div>) : null
+                    }
+                </div>
+
+                {/* Work Experience Area  */}
+                <div id="form-personal" className='mb-2'>
+                    <Heading as='h4' size='md' className='my-2'>
+                        EDUCATION
+                    </Heading>
+                    <hr />
+                    <Button onClick={handleEducationClick} className='my-3 w-100' colorScheme='teal' variant='solid'>Add Education</Button>
+                </div>
+
+                {/* Education Area  */}
+                <div id="form-personal" className='mb-2'>
+                    <Heading as='h4' size='md' className='my-2'>
+                        WORK EXPERIENCE
+                    </Heading>
+                    <hr />
+                    <Button onClick={handleWorkClick} className='my-3 w-100' colorScheme='teal' variant='solid'>Add Experience</Button>
                 </div>
             </div>
         </>

@@ -4,6 +4,7 @@ import { Button } from '@chakra-ui/react';
 import Navbar from '../Components/Navbar/Navbar'
 import UserDataCollect from '../Components/UserDataCollect/UserDataCollect';
 import './BuilderArea.css'
+import Footer from '../Components/Footer/Footer';
 
 const BuilderArea = () => {
 
@@ -24,6 +25,7 @@ const BuilderArea = () => {
             <div className="text-center">
                 <Button className='m-5' onClick={() => printResume()}>Print</Button>
             </div>
+            <Footer />
         </>
     )
 }
