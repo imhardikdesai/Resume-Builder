@@ -8,11 +8,10 @@
     -webkit-box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.61);
     -moz-box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.61);
 }
-
-input,
+/* input,
 textarea {
     background-color: #f2f2f285 !important;
-}
+} */
 
 /* media quires */
 /* @media only screen and (max-width: 1130px) {

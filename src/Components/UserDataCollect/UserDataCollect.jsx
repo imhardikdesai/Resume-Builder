@@ -7,10 +7,35 @@ const UserDataCollect = () => {
     const [projectCount, setProjectCount] = useState(0)
     const [projArr, setProjArr] = useState([])
     const [projectData, setProjectData] = useState([])
-
+    let tempObj = { id: [], pName: '', pDescription: '' }
     const handleChange = (e) => {
-        setProjectData({ ...projectData, [e.target.name]: e.target.value })
+        const { name, value, id } = e.target
+        tempObj[name] = value
+        // console.log(tempObj);
+        if (checkArrExist(id)) {
+            console.log('include');
+            let tempArr = projectData
+            let index = tempArr.findIndex(item => item.name === value);
+            tempArr[index] = tempObj
+            setProjectData(tempArr)
+        } else {
+            setProjectData([...projectData, tempObj])
+        }
     }
+
+    const checkArrExist = (ID) => {
+        let result = false;
+        for (let i = 0; i < projectData.length; i++) {
+            // if ((projectData[i].id).includes(ID)) {
+            //     result = true;
+            //     break;
+            // }
+            console.log((projectData[i].id).includes(ID));
+        }
+        // console.log(result);
+        // return result
+    }
+
     const handleProjectClick = (e) => {
         e.preventDefault();
         let i = projectCount
@@ -18,10 +43,10 @@ const UserDataCollect = () => {
         const template = (
             <>
                 <FormControl isRequired className='my-2'>
-                    <Input name={`pTitle${i}`} onChange={handleChange} type={'text'} placeholder='Enter appropriate Title' />
+                    <Input id={`T${i}`} name='pName' onChange={handleChange} type={'text'} placeholder='Enter appropriate Title' />
                 </FormControl>
                 <FormControl isRequired className='my-2'>
-                    <Textarea name={`pDescription${i}`} onChange={handleChange} placeholder='Use comma to separate Description' />
+                    <Textarea id={`D${i}`} name='pDescription' onChange={handleChange} placeholder='Use comma to separate Description' />
                 </FormControl>
             </>
         )
@@ -29,6 +54,7 @@ const UserDataCollect = () => {
         arr.push(template)
         setProjArr(arr)
         setProjectCount(i)
+        tempObj.id = [`T${i}`, `D${i}`]
     }
 
     const handleEducationClick = (e) => {
