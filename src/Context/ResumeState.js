@@ -17,7 +17,11 @@ const ResumeState = (props) => {
                 year: "2015-2019",
                 cgpa: "8.5",
             }
-        ]
+        ],
+        projectData: {
+            projectTitles: "Quiz App",
+            projectDescription: 'A quiz app made using ReactJS. It has a total of 10 questions and the user can select the answer and submit it. The user can also see the score at the end of the quiz.',
+        }
     }
 
 
