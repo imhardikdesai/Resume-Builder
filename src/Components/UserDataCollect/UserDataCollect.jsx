@@ -6,34 +6,17 @@ const UserDataCollect = () => {
 
     const [projectCount, setProjectCount] = useState(0)
     const [projArr, setProjArr] = useState([])
-    const [projectData, setProjectData] = useState([])
-    let tempObj = { id: [], pName: '', pDescription: '' }
+    const [projectData, setProjectData] = useState({ 'projectTitles': {}, 'projectDesc': {} })
+
     const handleChange = (e) => {
         const { name, value, id } = e.target
-        tempObj[name] = value
-        // console.log(tempObj);
-        if (checkArrExist(id)) {
-            console.log('include');
-            let tempArr = projectData
-            let index = tempArr.findIndex(item => item.name === value);
-            tempArr[index] = tempObj
-            setProjectData(tempArr)
+        let tempProjectData = projectData
+        if (name.includes('pName')) {
+            tempProjectData["projectTitles"][id] = value;
         } else {
-            setProjectData([...projectData, tempObj])
+            tempProjectData["projectDesc"][id] = value;
         }
-    }
-
-    const checkArrExist = (ID) => {
-        let result = false;
-        for (let i = 0; i < projectData.length; i++) {
-            // if ((projectData[i].id).includes(ID)) {
-            //     result = true;
-            //     break;
-            // }
-            console.log((projectData[i].id).includes(ID));
-        }
-        // console.log(result);
-        // return result
+        setProjectData({ ...projectData }, tempProjectData)
     }
 
     const handleProjectClick = (e) => {
@@ -54,7 +37,6 @@ const UserDataCollect = () => {
         arr.push(template)
         setProjArr(arr)
         setProjectCount(i)
-        tempObj.id = [`T${i}`, `D${i}`]
     }
 
     const handleEducationClick = (e) => {
