@@ -6,14 +6,14 @@ import { GrMail } from 'react-icons/gr'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 
 const Theme1 = (props) => {
-    const { themeData } = props;
+    const { themeData,componentRef } = props;
     const { name, profile, address, phone, email, skill } = themeData.personalData;
     const { projectTitles, projectDesc } = themeData.projectData;
     // const { educationTitles, educationDesc } = themeData.educationData;
     // const { workTitles, workDesc } = themeData.workData;
     return (
         <>
-            <div id="section-to-print">
+            <div id="section-to-print" ref={componentRef}>
                 <div id="theme1">
                     {/* Personal Info  */}
                     <header id='info' className='text-center mt-2'>
@@ -63,7 +63,7 @@ const Theme1 = (props) => {
                                             <Text className='sub-title'>{element[1]}</Text>
                                             <div className='sub-details'>
                                                 {
-                                                    (Object.entries(projectDesc).length % 2 !== 0) 
+                                                    (Object.entries(projectDesc).length % 2 !== 0)
                                                         ?
                                                         Object.entries(projectDesc)[index][1].split(',').map((element, index) => {
                                                             return <li key={index}>{element}</li>
