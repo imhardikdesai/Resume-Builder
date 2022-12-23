@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './userCollectData.css'
 import { FormControl, Input, Heading, Textarea, Button, Switch } from '@chakra-ui/react'
-
+import ResumeContext from '../../Context/ResumeContext'
 const UserDataCollect = () => {
+    const { themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork } = useContext(ResumeContext)
 
-    const [checkProj, setCheckProj] = useState(false);
-    const [checkWork, setCheckWork] = useState(false);
 
     const [projectCount, setProjectCount] = useState(0)
     const [educationCount, setEducationCount] = useState(0)
@@ -33,6 +32,7 @@ const UserDataCollect = () => {
             tempProjectData["projectDesc"][id] = value;
         }
         setProjectData({ ...projectData }, tempProjectData)
+        setThemeData({ ...themeData, projectData: projectData })
     }
 
     const handleProjectClick = (e) => {
@@ -117,6 +117,9 @@ const UserDataCollect = () => {
         setWorkCount(i)
     }
 
+    useEffect(() => {
+        setThemeData({ ...themeData, personalData })
+    }, [themeData, personalData, setThemeData])
 
     return (
         <>

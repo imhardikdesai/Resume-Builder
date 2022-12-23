@@ -5,8 +5,12 @@ import { ImLocation } from 'react-icons/im'
 import { GrMail } from 'react-icons/gr'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 
-const Theme1 = () => {
-
+const Theme1 = (props) => {
+    const { themeData } = props;
+    const { name, profile, address, phone, email, skill } = themeData.personalData;
+    const { projectTitles, projectDesc } = themeData.projectData;
+    // const { educationTitles, educationDesc } = themeData.educationData;
+    // const { workTitles, workDesc } = themeData.workData;
     return (
         <>
             <div id="section-to-print">
@@ -14,20 +18,15 @@ const Theme1 = () => {
                     {/* Personal Info  */}
                     <header id='info' className='text-center mt-2'>
                         <Heading as='h2' size='2xl' noOfLines={1}>
-                            Desai Hardik
+                            {name}
                         </Heading>
                         <Text fontSize='md' className='text-muted my-1 '>
-                            <span className='mx-2'><ImLocation className='d-inline mx-1' />Chital,Amreli,Gujarat</span>|
-                            <span className='mx-2'><GrMail className='d-inline mx-1' />hp676913@gmail.com</span>|
-                            <span className='mx-2'><BsFillTelephoneFill className='d-inline mx-1' />+91 6352604118</span>
+                            <span className='mx-2'><ImLocation className='d-inline mx-1' />{address}</span>|
+                            <span className='mx-2'><GrMail className='d-inline mx-1' />{email}</span>|
+                            <span className='mx-2'><BsFillTelephoneFill className='d-inline mx-1' />{phone}</span>
                         </Text>
-                        {/* <Text fontSize='md' className='text-muted my-1 d-flex align-items-center justify-content-center'>
-                            <div><ImLocation className='d-inline' />Address</div>
-                            <div>Mail</div>
-                            <div>Phone</div>
-                        </Text> */}
                         <Heading as='h3' size='md' className='mt-1 mb-2'>
-                            SOFTWARE ENGINEER
+                            {profile}
                         </Heading>
                     </header>
                     {/* Skills Part  */}
@@ -38,10 +37,13 @@ const Theme1 = () => {
 
                         <Box id='skills-set' className='basic-set d-flex justify-content-center align-items-center'>
                             <div className='skillBox'>
-                                <Badge className='skill-badge' variant='solid'>React</Badge>
+                                {/* <Badge className='skill-badge' variant='solid'>React</Badge>
                                 <Badge className='skill-badge' variant='solid'>Node</Badge>
                                 <Badge className='skill-badge' variant='solid'>Express</Badge>
-                                <Badge className='skill-badge' variant='solid'>MongoDB</Badge>
+                                <Badge className='skill-badge' variant='solid'>MongoDB</Badge> */}
+                                {
+                                    skill.split(',').map((element, index) => <Badge key={index} className='skill-badge' variant='solid'>{element}</Badge>)
+                                }
                             </div>
                         </Box>
                     </section>
@@ -54,20 +56,26 @@ const Theme1 = () => {
                         </Heading>
 
                         <Box id='project-set' className='basic-set'>
-                            <div className="subBox">
-                                <Text className='sub-title'>Instant Chat App | Lukrasto</Text>
-                                <div className='sub-details'>
-                                    <li>Developed a Standard Messaging App Using StoryBloop XA</li>
-                                    <li>Improved User Experience During the Usage of the App by Eliminating Bugs</li>
-                                </div>
-                            </div>
-                            <div className="subBox">
-                                <Text className='sub-title'>Instant Chat App | Lukrasto</Text>
-                                <div className='sub-details'>
-                                    <li>Developed a Standard Messaging App Using StoryBloop XA</li>
-                                    <li>Improved User Experience During the Usage of the App by Eliminating Bugs</li>
-                                </div>
-                            </div>
+                            {
+                                Object.entries(projectTitles).map((element, index) => {
+                                    return (
+                                        <div key={index} className="subBox">
+                                            <Text className='sub-title'>{element[1]}</Text>
+                                            <div className='sub-details'>
+                                                {
+                                                    (Object.entries(projectDesc).length % 2 !== 0) 
+                                                        ?
+                                                        Object.entries(projectDesc)[index][1].split(',').map((element, index) => {
+                                                            return <li key={index}>{element}</li>
+                                                        })
+                                                        :
+                                                        null
+                                                }
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </Box>
                     </section>
 
@@ -124,8 +132,7 @@ const Theme1 = () => {
                     </section>
 
                     {/* Award & Achievement */}
-                    {/* Skills Part  */}
-                    <section id="awards" className='my-2'>
+                    {/* <section id="awards" className='my-2'>
                         <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                             AWARDS & ACHIEVEMENTS
                         </Heading>
@@ -137,7 +144,7 @@ const Theme1 = () => {
                                 <li>Overall Best New Employee, CrystaPointe (2019)</li>
                             </div>
                         </Box>
-                    </section>
+                    </section> */}
                 </div>
             </div>
         </>

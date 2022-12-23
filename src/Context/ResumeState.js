@@ -4,32 +4,36 @@ import { useState } from "react";
 const ResumeState = (props) => {
 
     const initialData = {
-        name: "John Doe",
-        email: "",
-        address: "1234, Some Street, Some City, Some State, Some Country",
-        phone: "1234567890",
-        objective: "To work in a challenging environment where I can utilize my skills and knowledge to the best of my ability and grow along with the organization.",
-        skills: [
-            {
-                id: 1,
-                degree: "B.Tech",
-                institute: "Some Institute",
-                year: "2015-2019",
-                cgpa: "8.5",
-            }
-        ],
+        personalData: {
+            name: "Your Name",
+            profile: "Work Profile",
+            address: "Address Line",
+            phone: "Phone Number",
+            email: "Email Address",
+            skill: 'HTML, CSS, JavaScript, React',
+        },
         projectData: {
-            projectTitles: "Quiz App",
-            projectDescription: 'A quiz app made using ReactJS. It has a total of 10 questions and the user can select the answer and submit it. The user can also see the score at the end of the quiz.',
+            projectTitles: {},
+            projectDesc: {},
+        },
+        educationData: {
+            educationTitles: [{ eTitle1: "Henna High School", eTitle2: "Oxford School of science" }],
+            educationDesc: [{ eDescription1: 'SSC 99.99%', eDescription2: 'HSC 99.98%' }],
+        },
+        workData: {
+            workTitles: [{ wTitle1: "Amazon - Web developer", wTitle2: "Google - Software Engineer" }],
+            workDesc: [{ wDescription1: 'Formulate and review policies as regards Industry Improvement', wDescription2: 'Create a functional and technical application of set policies' }],
         }
     }
 
 
+    // const [themeData, setThemeData] = useState(initialData)
     const [themeData, setThemeData] = useState(initialData)
-
+    const [checkProj, setCheckProj] = useState(false);
+    const [checkWork, setCheckWork] = useState(false);
 
     return (
-        <ResumeContext.Provider value={{ themeData, setThemeData }}>
+        <ResumeContext.Provider value={{ themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
             {props.children}
         </ResumeContext.Provider >
     )
