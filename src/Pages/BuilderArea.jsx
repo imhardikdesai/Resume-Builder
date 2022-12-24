@@ -6,21 +6,30 @@ import UserDataCollect from '../Components/UserDataCollect/UserDataCollect';
 import './BuilderArea.css'
 import Footer from '../Components/Footer/Footer';
 import ResumeContext from '../Context/ResumeContext';
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 import { useReactToPrint } from 'react-to-print';
 
 const BuilderArea = () => {
-    const { themeData } = useContext(ResumeContext);
+    const { themeData, loading, setLoading } = useContext(ResumeContext);
 
     const componentRef = useRef();
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
+        onBeforePrint: () => {
+            setLoading(true)
+        },
+        onAfterPrint: () => {
+            setLoading(false)
+        }
     });
-
 
     return (
         <>
             <Navbar />
+            {
+                loading && <PropagateLoader id='spinner' color="#319795" size={30} />
+            }
             <div id='main-box' className="d-flex justify-content-between flex-wrap mt-4 mx-2">
                 <UserDataCollect />
                 <div id='theme-box-border'>

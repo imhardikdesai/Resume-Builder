@@ -16,6 +16,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.7",
     "react-to-print": "^2.14.10",
     "web-vitals": "^2.1.4"
   },

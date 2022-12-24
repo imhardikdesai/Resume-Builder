@@ -9,3 +9,9 @@
     height: fit-content;
     min-width: 50%;
 }
+
+#spinner {
+    position: absolute !important;
+    top: 50vh;
+    left: 50vw;
+}

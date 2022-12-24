@@ -31,9 +31,10 @@ const ResumeState = (props) => {
     const [themeData, setThemeData] = useState(initialData)
     const [checkProj, setCheckProj] = useState(false);
     const [checkWork, setCheckWork] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     return (
-        <ResumeContext.Provider value={{ themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
+        <ResumeContext.Provider value={{ loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
             {props.children}
         </ResumeContext.Provider >
     )
