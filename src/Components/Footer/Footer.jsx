@@ -1,5 +1,5 @@
 import { Box, chakra, Container, Stack, Text, Image, useColorModeValue, VisuallyHidden, } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaSnapchat, FaGithub } from 'react-icons/fa';
 import logo from './../../Assets/logo.png';
 
 // const Logo = (props) => {
@@ -61,13 +61,13 @@ export default function Footer() {
                 <Image style={{ height: '44px' }} src={logo} alt="logo" />
                 <Text>© 2022 Chakra Templates. All rights reserved</Text>
                 <Stack direction={'row'} spacing={6}>
-                    <SocialButton label={'Twitter'} href={'#'}>
-                        <FaTwitter />
+                    <SocialButton label={'Github'} href={'https://github.com/imhardikdesai'}>
+                        <FaGithub />
                     </SocialButton>
-                    <SocialButton label={'YouTube'} href={'#'}>
-                        <FaYoutube />
+                    <SocialButton label={'Snapchat'} href={'https://twitter.com/imhardikdesai'}>
+                        <FaSnapchat />
                     </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
+                    <SocialButton label={'Instagram'} href={'https://instagram.com/imhardikdesai'}>
                         <FaInstagram />
                     </SocialButton>
                 </Stack>
