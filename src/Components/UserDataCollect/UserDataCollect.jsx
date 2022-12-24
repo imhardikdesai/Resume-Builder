@@ -31,7 +31,7 @@ const UserDataCollect = () => {
         } else {
             tempProjectData["projectDesc"][id] = value;
         }
-        setProjectData({ ...projectData }, tempProjectData)
+        setProjectData({ ...projectData, tempProjectData })
         setThemeData({ ...themeData, projectData: projectData })
     }
 
@@ -42,10 +42,10 @@ const UserDataCollect = () => {
         const template = (
             <>
                 <FormControl isRequired className='my-2'>
-                    <Input id={`pTitle${i}`} name='pName' onChange={handleChangeProject} type={'text'} placeholder='Enter Project Title' />
+                    <Input disabled={checkProj} id={`pTitle${i}`} name='pName' onChange={handleChangeProject} type={'text'} placeholder='Enter Project Title' />
                 </FormControl>
                 <FormControl isRequired className='my-2'>
-                    <Textarea id={`pDescription${i}`} name='pDescription' onChange={handleChangeProject} placeholder='Use comma to separate Description' />
+                    <Textarea disabled={checkProj} id={`pDescription${i}`} name='pDescription' onChange={handleChangeProject} placeholder='Use comma to separate Description' />
                 </FormControl>
             </>
         )
@@ -118,8 +118,8 @@ const UserDataCollect = () => {
     }
 
     useEffect(() => {
-        setThemeData({ ...themeData, personalData })
-    }, [themeData, personalData, setThemeData])
+        setThemeData({ ...themeData, personalData, projectData, educationData, workData })
+    }, [themeData, personalData, setThemeData, projectData, educationData, workData])
 
     return (
         <>
@@ -187,6 +187,7 @@ const UserDataCollect = () => {
                     }
                 </div>
                 {/* Work Experience Area  */}
+
                 <div id="form-personal" className='mb-2'>
                     <div className='d-flex align-items-center justify-content-between'>
                         <Heading as='h4' size='md' className='my-2'>

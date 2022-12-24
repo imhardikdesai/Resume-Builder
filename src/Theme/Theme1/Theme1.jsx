@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Heading, Text, Box, Badge } from '@chakra-ui/react'
 import './theme1.css'
 import { ImLocation } from 'react-icons/im'
 import { GrMail } from 'react-icons/gr'
 import { BsFillTelephoneFill } from 'react-icons/bs'
+import ResumeContext from '../../Context/ResumeContext'
 
 const Theme1 = (props) => {
-    const { themeData,componentRef } = props;
+    const { checkProj, checkWork } = useContext(ResumeContext)
+    const { themeData, componentRef } = props;
     const { name, profile, address, phone, email, skill } = themeData.personalData;
     const { projectTitles, projectDesc } = themeData.projectData;
-    // const { educationTitles, educationDesc } = themeData.educationData;
-    // const { workTitles, workDesc } = themeData.workData;
+    const { educationTitles, educationDesc } = themeData.educationData;
+    const { workTitles, workDesc } = themeData.workData;
     return (
         <>
             <div id="section-to-print" ref={componentRef}>
@@ -37,10 +39,6 @@ const Theme1 = (props) => {
 
                         <Box id='skills-set' className='basic-set d-flex justify-content-center align-items-center'>
                             <div className='skillBox'>
-                                {/* <Badge className='skill-badge' variant='solid'>React</Badge>
-                                <Badge className='skill-badge' variant='solid'>Node</Badge>
-                                <Badge className='skill-badge' variant='solid'>Express</Badge>
-                                <Badge className='skill-badge' variant='solid'>MongoDB</Badge> */}
                                 {
                                     skill.split(',').map((element, index) => <Badge key={index} className='skill-badge' variant='solid'>{element}</Badge>)
                                 }
@@ -49,35 +47,38 @@ const Theme1 = (props) => {
                     </section>
 
                     {/* Project Section  */}
+                    {
+                        !checkProj &&
 
-                    <section id="projects" className='my-2'>
-                        <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
-                            PROJECTS
-                        </Heading>
+                        <section id="projects" className='my-2'>
+                            <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                                PROJECTS
+                            </Heading>
 
-                        <Box id='project-set' className='basic-set'>
-                            {
-                                Object.entries(projectTitles).map((element, index) => {
-                                    return (
-                                        <div key={index} className="subBox">
-                                            <Text className='sub-title'>{element[1]}</Text>
-                                            <div className='sub-details'>
-                                                {
-                                                    (Object.entries(projectDesc).length % 2 !== 0)
-                                                        ?
-                                                        Object.entries(projectDesc)[index][1].split(',').map((element, index) => {
-                                                            return <li key={index}>{element}</li>
-                                                        })
-                                                        :
-                                                        null
-                                                }
+                            <Box id='project-set' className='basic-set'>
+                                {
+                                    Object.entries(projectTitles).map((element, index) => {
+                                        return (
+                                            <div key={index} className="subBox">
+                                                <Text className='sub-title'>{element[1]}</Text>
+                                                <div className='sub-details'>
+                                                    {
+                                                        (Object.entries(projectDesc)[index] === undefined)
+                                                            ?
+                                                            null
+                                                            :
+                                                            Object.entries(projectDesc)[index][1].split(',').map((element, index) => {
+                                                                return <li key={index}>{element}</li>
+                                                            })
+                                                    }
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </Box>
-                    </section>
+                                        )
+                                    })
+                                }
+                            </Box>
+                        </section>
+                    }
 
                     {/* Education Part  */}
 
@@ -87,50 +88,61 @@ const Theme1 = (props) => {
                         </Heading>
 
                         <Box id='education-set' className='basic-set'>
-                            <div className="subBox">
-                                <Text className='sub-title'>Computer Science AND Business | Dandilton (Online)</Text>
-                                <div className='sub-details'>
-                                    <li>Studied Business Software planning, coordination, and efficiency</li>
-                                    <li>Worked with various industries on launching efficient IT Systems</li>
-                                </div>
-                            </div>
-                            <div className="subBox">
-                                <Text className='sub-title'>BEng Chemical Engineering | Royal Clickton</Text>
-                                <div className='sub-details'>
-                                    <li>GPA: 3.19</li>
-                                    <li>Minor in Process Management</li>
-                                    <li>Thesis in Modelling and Analysis of Process Efficiency in a Cement Plant</li>
-                                </div>
-                            </div>
+                            {
+                                Object.entries(educationTitles).map((element, index) => {
+                                    return (
+                                        <div key={index} className="subBox">
+                                            <Text className='sub-title'>{element[1]}</Text>
+                                            <div className='sub-details'>
+                                                {
+                                                    (Object.entries(educationDesc)[index] === undefined)
+                                                        ?
+                                                        null
+                                                        :
+                                                        Object.entries(educationDesc)[index][1].split(',').map((element, index) => {
+                                                            return <li key={index}>{element}</li>
+                                                        })
+                                                }
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </Box>
                     </section>
 
                     {/* WORK EXPERIENCE  */}
+                    {
+                        !checkWork &&
+                        <section id="experience" className='my-2'>
+                            <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                                WORK EXPERIENCE
+                            </Heading>
 
-                    <section id="experience" className='my-2'>
-                        <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
-                            WORK EXPERIENCE
-                        </Heading>
-
-                        <Box id='experience-set' className='basic-set'>
-                            <div className="subBox">
-                                <Text className='sub-title'>Policy Manager | Lexramax Inc</Text>
-                                <div className='sub-details'>
-                                    <li>Formulate and review policies as regards Industry Improvement</li>
-                                    <li>Create a functional and technical application of set policies</li>
-                                </div>
-                            </div>
-                            <div className="subBox">
-                                <Text className='sub-title'>Quality Control Engineer | KrystaPointe Water</Text>
-                                <div className='sub-details'>
-                                    <li>Collect and Analyse water samples from different stages of Production</li>
-                                    <li>Make Recommendations on Improvement based on my analysis</li>
-                                    <li>Supervise Implementations of Recommendations</li>
-                                </div>
-                            </div>
-                        </Box>
-                    </section>
-
+                            <Box id='experience-set' className='basic-set'>
+                                {
+                                    Object.entries(workTitles).map((element, index) => {
+                                        return (
+                                            <div key={index} className="subBox">
+                                                <Text className='sub-title'>{element[1]}</Text>
+                                                <div className='sub-details'>
+                                                    {
+                                                        (Object.entries(workDesc)[index] === undefined)
+                                                            ?
+                                                            null
+                                                            :
+                                                            Object.entries(workDesc)[index][1].split(',').map((element, index) => {
+                                                                return <li key={index}>{element}</li>
+                                                            })
+                                                    }
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </Box>
+                        </section>
+                    }
                     {/* Award & Achievement */}
                     {/* <section id="awards" className='my-2'>
                         <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>

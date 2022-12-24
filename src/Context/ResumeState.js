@@ -10,19 +10,19 @@ const ResumeState = (props) => {
             address: "Address Line",
             phone: "Phone Number",
             email: "Email Address",
-            skill: 'HTML, CSS, JavaScript, React',
+            skill: 'Your, Skills, are, shown, here',
         },
         projectData: {
-            projectTitles: {},
-            projectDesc: {},
+            projectTitles: { pTitle1: "Project Title 1", pTitle2: "Project Title 2" },
+            projectDesc: { pDescription1: "Project Description 1", pDescription2: "Project Description 2" },
         },
         educationData: {
-            educationTitles: [{ eTitle1: "Henna High School", eTitle2: "Oxford School of science" }],
-            educationDesc: [{ eDescription1: 'SSC 99.99%', eDescription2: 'HSC 99.98%' }],
+            educationTitles: { eTitle1: "Education Title 1", eTitle2: "Education Title 2" },
+            educationDesc: { eDescription1: "Education Description 1", eDescription2: "Education Description 2" },
         },
         workData: {
-            workTitles: [{ wTitle1: "Amazon - Web developer", wTitle2: "Google - Software Engineer" }],
-            workDesc: [{ wDescription1: 'Formulate and review policies as regards Industry Improvement', wDescription2: 'Create a functional and technical application of set policies' }],
+            workTitles: { wTitle1: "Work Title 1", wTitle2: "Work Title 2" },
+            workDesc: { wDescription1: "Work Description 1", wDescription2: "Work Description 2" },
         }
     }
 
