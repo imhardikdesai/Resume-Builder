@@ -13,16 +13,16 @@ const ResumeState = (props) => {
             skill: 'Your, Skills, are, shown, here',
         },
         projectData: {
-            projectTitles: { pTitle1: "Project Title 1", pTitle2: "Project Title 2" },
-            projectDesc: { pDescription1: "Project Description 1", pDescription2: "Project Description 2" },
+            projectTitles: { pTitle1: "Project Title 1" },
+            projectDesc: { pDescription1: "Project Description 1" },
         },
         educationData: {
-            educationTitles: { eTitle1: "Education Title 1", eTitle2: "Education Title 2" },
-            educationDesc: { eDescription1: "Education Description 1", eDescription2: "Education Description 2" },
+            educationTitles: { eTitle1: "Education Title 1" },
+            educationDesc: { eDescription1: "Education Description 1" },
         },
         workData: {
-            workTitles: { wTitle1: "Work Title 1", wTitle2: "Work Title 2" },
-            workDesc: { wDescription1: "Work Description 1", wDescription2: "Work Description 2" },
+            workTitles: { wTitle1: "Work Title 1" },
+            workDesc: { wDescription1: "Work Description 1" },
         }
     }
 

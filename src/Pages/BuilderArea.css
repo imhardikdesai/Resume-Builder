@@ -1,6 +1,11 @@
 /* media quires */
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 750px) {
     #main-box {
         flex-direction: column !important;
     }
+}
+
+#theme-box-border {
+    height: fit-content;
+    min-width: 50%;
 }

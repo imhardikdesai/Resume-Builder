@@ -12,10 +12,10 @@ const UserDataCollect = () => {
     const [projArrTemplate, setProjArrTemplate] = useState([])
     const [educationArrTemplate, setEducationArrTemplate] = useState([])
     const [workArrTemplate, setWorkArrTemplate] = useState([])
-    const [projectData, setProjectData] = useState({ 'projectTitles': {}, 'projectDesc': {} })
-    const [educationData, setEducationData] = useState({ 'educationTitles': {}, 'educationDesc': {} })
-    const [workData, setWorkData] = useState({ 'workTitles': {}, 'workDesc': {} })
-    const [personalData, setPersonalData] = useState({ 'name': '', 'profile': '', 'address': '', 'phone': '', 'email': '', 'skill': '' })
+    const [projectData, setProjectData] = useState({ 'projectTitles': { pTitle1: "Project Title " }, 'projectDesc': { pDescription1: "Project Description are Shown here , with Bullet Points" } })
+    const [educationData, setEducationData] = useState({ 'educationTitles': { eTitle1: "Education Title" }, 'educationDesc': { eDescription1: "Education Description are Shown here , with Bullet Points" } })
+    const [workData, setWorkData] = useState({ 'workTitles': { wTitle1: "Work Title" }, 'workDesc': { wDescription1: "Work Description are Shown here , with Bullet Points" } })
+    const [personalData, setPersonalData] = useState({ name: "Your Name", profile: "Work Profile", address: "Address Line", phone: "Phone Number", email: "Email Address", skill: 'Your, Skills, are, shown, here', })
 
     // To Add Personal Data to the State
     const handleChangePersonal = (e) => {
