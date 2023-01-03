@@ -1,7 +1,6 @@
 import React, { useContext, useRef } from 'react'
 import Theme1 from '../Theme/Theme1/Theme1'
 import { Button } from '@chakra-ui/react';
-import Navbar from '../Components/Navbar/Navbar'
 import UserDataCollect from '../Components/UserDataCollect/UserDataCollect';
 import './BuilderArea.css'
 import Footer from '../Components/Footer/Footer';
@@ -26,7 +25,6 @@ const BuilderArea = () => {
 
     return (
         <>
-            <Navbar />
             {
                 loading && <PropagateLoader id='spinner' color="#319795" size={30} />
             }
