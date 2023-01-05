@@ -14,12 +14,13 @@ export default function Introduction() {
 
 
     return (
-        <Container my={16} flexDirection={{ base: 'column', md: 'row', sm: 'column' }} display={'flex'} alignItems={'center'} maxW={'5xl'}>
+        <Container my={{ base: 1.5, md: 16 }} justifyContent={'space-between'} flexDirection={{ base: 'column', md: 'row', sm: 'column' }} display={'flex'} alignItems={'center'} maxW={'7xl'}>
             <Stack
+                width={{ base: '95%', md: '47%' }}
                 textAlign={'center'}
                 align={'center'}
                 spacing={{ base: 8, md: 10 }}
-                py={{ base: 20, md: 28, sm: '14' }}>
+                py={{ base: 1.5, md: 10, sm: '14' }}>
 
                 {
                     selectBtn
@@ -63,7 +64,8 @@ export default function Introduction() {
                         </>
                         :
                         <Heading
-                            textAlign={'start'}
+                            m={'1.5'}
+                            textAlign={{ base: 'center', md: 'start' }}
                             fontWeight={600}
                             fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
                             lineHeight={'110%'}>
@@ -92,17 +94,26 @@ export default function Introduction() {
                     </Stack>
                     :
                     <>
-                        <div class="templatesList">
-                            <div class="template">
-                                <img src="https://user-images.githubusercontent.com/87645745/210406666-ef3e2d63-28ab-4f8c-95d2-af3e6ea60bcf.png" alt="Cv Preview" /> </div>
-                            <div class="template">
-                                <img src="https://testanalytics-5e6e3.web.app/static/media/2.fba17867.JPG" alt="Cv Preview" /> </div>
-                            <div class="template">
+                        <Box maxW={{ base: '100%', md: '61%' }} className="templatesList">
+                            <div className="template">
+                                <img src="https://user-images.githubusercontent.com/87645745/210406666-ef3e2d63-28ab-4f8c-95d2-af3e6ea60bcf.png" alt="Cv Preview" />
+                            </div>
+                            <div className="template">
+                                <img src="https://testanalytics-5e6e3.web.app/static/media/2.fba17867.JPG" alt="Cv Preview" />\
+                            </div>
+                            <div className="template">
                                 <img src="https://testanalytics-5e6e3.web.app/static/media/3.776a5714.JPG" alt="Cv Preview" />
                             </div>
-                            <div class="template">
-                                <img src="https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg" alt="Cv Preview" /> </div>
-                        </div>
+                            <div className="template">
+                                <img src="https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg" alt="Cv Preview" />
+                            </div>
+                            <div className="template">
+                                <img src="https://testanalytics-5e6e3.web.app/static/media/2.fba17867.JPG" alt="Cv Preview" />\
+                            </div>
+                            <div className="template">
+                                <img src="https://testanalytics-5e6e3.web.app/static/media/3.776a5714.JPG" alt="Cv Preview" />
+                            </div>
+                        </Box>
                     </>
             }
         </Container>

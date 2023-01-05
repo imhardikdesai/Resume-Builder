@@ -8,15 +8,16 @@
     margin: 0px 5px;
 }
 
+
 .templatesList {
     font-family: "Poppins";
     color: #fff;
     text-align: center;
     height: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow-y: scroll;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .template {
@@ -28,7 +29,10 @@
     overflow: hidden;
     border-radius: 13px;
     margin: auto;
+    border: 1px solid black;
+    margin: 10px;
 }
+
 .template img {
     max-width: 100%;
     min-height: 100%;

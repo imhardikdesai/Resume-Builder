@@ -1,0 +1,5 @@
+{
+    "java.autobuild.enabled": false,
+    "markdown.editor.drop.enabled": false,
+    "markdown.experimental.editor.pasteLinks.enabled": false
+}
