@@ -7,7 +7,7 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 import ResumeContext from '../../Context/ResumeContext'
 
 const Theme1 = (props) => {
-    const { checkProj, checkWork } = useContext(ResumeContext)
+    const { checkProj, checkWork, checkAward } = useContext(ResumeContext)
     const { themeData, componentRef } = props;
     const { name, profile, address, phone, email, skill } = themeData.personalData;
     const { projectTitles, projectDesc } = themeData.projectData;
@@ -145,22 +145,25 @@ const Theme1 = (props) => {
                         </section>
                     }
                     {/* Award & Achievement */}
-                    <section id="awards" className='my-2'>
-                        <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
-                            AWARDS & ACHIEVEMENTS
-                        </Heading>
+                    {
+                        !checkAward &&
+                        <section id="awards" className='my-2'>
+                            <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                                AWARDS & ACHIEVEMENTS
+                            </Heading>
 
-                        <Box id='award-set' className='basic-set d-flex justify-content-between align-items-center'>
-                            <div>
-                                {
-                                    awards.split(',').map((element, index) => {
-                                        return <li key={index}>{element}</li>
-                                    })
-                                }
+                            <Box id='award-set' className='basic-set d-flex justify-content-between align-items-center'>
+                                <div>
+                                    {
+                                        awards.split(',').map((element, index) => {
+                                            return <li key={index}>{element}</li>
+                                        })
+                                    }
 
-                            </div>
-                        </Box>
-                    </section>
+                                </div>
+                            </Box>
+                        </section>
+                    }
                 </div>
             </div>
         </>
