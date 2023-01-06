@@ -1,5 +1,5 @@
 import ResumeContext from "./ResumeContext";
-import { useState,useRef } from "react";
+import { useState, useRef } from "react";
 import { useReactToPrint } from 'react-to-print';
 
 
@@ -36,6 +36,9 @@ const ResumeState = (props) => {
         workData: {
             workTitles: { wTitle1: "Work Title 1" },
             workDesc: { wDescription1: "Work Description 1" },
+        },
+        awardData: {
+            awards: ''
         }
     }
 
@@ -44,12 +47,14 @@ const ResumeState = (props) => {
     const [themeData, setThemeData] = useState(initialData)
     const [checkProj, setCheckProj] = useState(false);
     const [checkWork, setCheckWork] = useState(false);
+    const [checkAward, setCheckAward] = useState(false);
     const [loading, setLoading] = useState(false);
     const [showComponent, setShowComponent] = useState(false);
     const [currentTheme, setCurrentTheme] = useState(false);
 
     return (
-        <ResumeContext.Provider value={{componentRef,handlePrint, currentTheme, setCurrentTheme, showComponent, setShowComponent, loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
+        <ResumeContext.Provider value={{ checkAward, setCheckAward, componentRef, handlePrint, currentTheme, setCurrentTheme, showComponent, setShowComponent, loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }
+        }>
             {props.children}
         </ResumeContext.Provider >
     )

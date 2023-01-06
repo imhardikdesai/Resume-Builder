@@ -13,6 +13,7 @@ const Theme1 = (props) => {
     const { projectTitles, projectDesc } = themeData.projectData;
     const { educationTitles, educationDesc } = themeData.educationData;
     const { workTitles, workDesc } = themeData.workData;
+    const { awards } = themeData.awardData;
     return (
         <>
             <div id="section-to-print" ref={componentRef}>
@@ -144,19 +145,22 @@ const Theme1 = (props) => {
                         </section>
                     }
                     {/* Award & Achievement */}
-                    {/* <section id="awards" className='my-2'>
+                    <section id="awards" className='my-2'>
                         <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                             AWARDS & ACHIEVEMENTS
                         </Heading>
 
                         <Box id='award-set' className='basic-set d-flex justify-content-between align-items-center'>
                             <div>
-                                <li>Most Innovative Employee of the Year, LexraMax (2021)</li>
-                                <li>Project Leader, Dandilton (2021)</li>
-                                <li>Overall Best New Employee, CrystaPointe (2019)</li>
+                                {
+                                    awards.split(',').map((element, index) => {
+                                        return <li key={index}>{element}</li>
+                                    })
+                                }
+
                             </div>
                         </Box>
-                    </section> */}
+                    </section>
                 </div>
             </div>
         </>

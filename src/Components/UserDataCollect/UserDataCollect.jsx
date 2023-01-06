@@ -3,7 +3,7 @@ import './userCollectData.css'
 import { FormControl, Input, Heading, Textarea, Button, Switch } from '@chakra-ui/react'
 import ResumeContext from '../../Context/ResumeContext'
 const UserDataCollect = () => {
-    const { themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork } = useContext(ResumeContext)
+    const { themeData, checkAward, setCheckAward, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork } = useContext(ResumeContext)
 
 
     const [projectCount, setProjectCount] = useState(0)
@@ -16,6 +16,7 @@ const UserDataCollect = () => {
     const [educationData, setEducationData] = useState({ 'educationTitles': { eTitle1: "Education Title" }, 'educationDesc': { eDescription1: "Education Description are Shown here , with Bullet Points" } })
     const [workData, setWorkData] = useState({ 'workTitles': { wTitle1: "Work Title" }, 'workDesc': { wDescription1: "Work Description are Shown here , with Bullet Points" } })
     const [personalData, setPersonalData] = useState({ name: "Your Name", profile: "Work Profile", address: "Address Line", phone: "Phone Number", email: "Email Address", skill: 'Your, Skills, are, shown, here', })
+    const [awardData, setAwardData] = useState({ awards: 'Your Awards are shown here' })
 
     // To Add Personal Data to the State
     const handleChangePersonal = (e) => {
@@ -117,9 +118,14 @@ const UserDataCollect = () => {
         setWorkCount(i)
     }
 
+    // To Add Award & Achievement Data to the State
+    const handleChangeAwards = (e) => {
+        const { name, value } = e.target
+        setAwardData({ ...awardData, [name]: value })
+    }
     useEffect(() => {
-        setThemeData({ ...themeData, personalData, projectData, educationData, workData })
-    }, [themeData, personalData, setThemeData, projectData, educationData, workData])
+        setThemeData({ ...themeData, personalData, projectData, educationData, workData, awardData })
+    }, [themeData, personalData, setThemeData, projectData, educationData, workData, awardData])
 
     return (
         <>
@@ -186,8 +192,8 @@ const UserDataCollect = () => {
                         (projectCount > 0) ? projArrTemplate.map((element, index) => <div key={index}>{element}</div>) : null
                     }
                 </div>
-                {/* Work Experience Area  */}
 
+                {/* Work Experience Area  */}
                 <div id="form-personal" className='mb-2'>
                     <div className='d-flex align-items-center justify-content-between'>
                         <Heading as='h4' size='md' className='my-2'>
@@ -201,6 +207,21 @@ const UserDataCollect = () => {
                         (workCount > 0) ? workArrTemplate.map((element, index) => <div key={index}>{element}</div>) : null
                     }
                 </div>
+
+                {/* Awards & Achievement  */}
+                <div id="form-personal" className='mb-2'>
+                    <div className='d-flex align-items-center justify-content-between'>
+                        <Heading as='h4' size='md' className='my-2'>
+                            Awards & Achievement
+                        </Heading>
+                        <Switch defaultChecked={true} onChange={() => (setCheckAward(!checkAward))} colorScheme='teal' />
+                    </div>
+                    <hr />
+                    <FormControl isRequired className='my-2'>
+                        <Textarea name='awards' disabled={checkAward} onChange={handleChangeAwards} placeholder='Use comma to separate Achievement' />
+                    </FormControl>
+                </div>
+
             </div>
         </>
     )
