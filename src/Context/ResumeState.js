@@ -1,7 +1,20 @@
 import ResumeContext from "./ResumeContext";
-import { useState } from "react";
+import { useState,useRef } from "react";
+import { useReactToPrint } from 'react-to-print';
+
 
 const ResumeState = (props) => {
+
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+        onBeforePrint: () => {
+            setLoading(true)
+        },
+        onAfterPrint: () => {
+            setLoading(false)
+        }
+    });
 
     const initialData = {
         personalData: {
@@ -32,9 +45,11 @@ const ResumeState = (props) => {
     const [checkProj, setCheckProj] = useState(false);
     const [checkWork, setCheckWork] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [showComponent, setShowComponent] = useState(false);
+    const [currentTheme, setCurrentTheme] = useState(false);
 
     return (
-        <ResumeContext.Provider value={{ loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
+        <ResumeContext.Provider value={{componentRef,handlePrint, currentTheme, setCurrentTheme, showComponent, setShowComponent, loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
             {props.children}
         </ResumeContext.Provider >
     )

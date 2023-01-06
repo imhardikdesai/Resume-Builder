@@ -3,13 +3,21 @@ import './introduction.css';
 import homeLogo from './../../Assets/home-logo.png'
 // import { Link as ReachLink } from 'react-router-dom'
 import { Image } from '@chakra-ui/react'
-import { useState } from 'react';
-
+import { useContext, useState } from 'react';
+import ResumeContext from '../../Context/ResumeContext';
+import ThemeTemplateData from '../../db/ThemeTemplateData';
 
 export default function Introduction() {
+    const { setCurrentTheme, showComponent, setShowComponent } = useContext(ResumeContext);
     const [selectBtn, setSelectBtn] = useState(true)
+
     const handleSelectTemplate = () => {
         setSelectBtn(!selectBtn)
+    }
+
+    const showTheme = (e) => {
+        setShowComponent(!showComponent)
+        setCurrentTheme(e.target.id)
     }
 
 
@@ -95,24 +103,13 @@ export default function Introduction() {
                     :
                     <>
                         <Box maxW={{ base: '100%', md: '61%' }} className="templatesList">
-                            <div className="template">
-                                <img src="https://user-images.githubusercontent.com/87645745/210406666-ef3e2d63-28ab-4f8c-95d2-af3e6ea60bcf.png" alt="Cv Preview" />
-                            </div>
-                            <div className="template">
-                                <img src="https://testanalytics-5e6e3.web.app/static/media/2.fba17867.JPG" alt="Cv Preview" />\
-                            </div>
-                            <div className="template">
-                                <img src="https://testanalytics-5e6e3.web.app/static/media/3.776a5714.JPG" alt="Cv Preview" />
-                            </div>
-                            <div className="template">
-                                <img src="https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg" alt="Cv Preview" />
-                            </div>
-                            <div className="template">
-                                <img src="https://testanalytics-5e6e3.web.app/static/media/2.fba17867.JPG" alt="Cv Preview" />\
-                            </div>
-                            <div className="template">
-                                <img src="https://testanalytics-5e6e3.web.app/static/media/3.776a5714.JPG" alt="Cv Preview" />
-                            </div>
+                            {
+                                ThemeTemplateData.map((item, index) => {
+                                    return <div key={index} className="template" onClick={showTheme}>
+                                        <img id={item.id} src={item.imageSrc} alt={item.imageAlt} />
+                                    </div>
+                                })
+                            }
                         </Box>
                     </>
             }
