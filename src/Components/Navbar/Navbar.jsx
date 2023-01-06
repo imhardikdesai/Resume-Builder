@@ -1,11 +1,13 @@
-import { Box, Flex, HStack, Link, IconButton, useDisclosure, useColorMode, useColorModeValue, Stack, Button } from '@chakra-ui/react';
+import { Box, Flex, HStack, IconButton, useDisclosure, useColorMode, useColorModeValue, Stack, Button } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Link as ReachLink } from 'react-router-dom'
 import logo from './../../Assets/logo.png';
 
-const Links = ['Home', 'About', 'Contact'];
+const Links = ['Home', 'About'];
 
 const NavLink = (link) => (
-    <Link
+
+    <ReachLink
         px={2}
         py={1}
         rounded={'md'}
@@ -13,10 +15,10 @@ const NavLink = (link) => (
             textDecoration: 'none',
             bg: useColorModeValue('gray.200', 'gray.700'),
         }}
-        href={'#'}
+        to={'/' + (link.children).toLowerCase()}
         key={link.children}>
         {link.children}
-    </Link>
+    </ReachLink>
 );
 
 export default function Navbar() {

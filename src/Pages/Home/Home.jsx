@@ -6,7 +6,7 @@ import Theme1 from './../../Theme/Theme1/Theme1'
 import Theme2 from './../../Theme/Theme2/Theme2'
 
 const Home = () => {
-    const { currentTheme, showComponent, themeData,componentRef } = useContext(ResumeContext);
+    const { currentTheme, showComponent, themeData, componentRef } = useContext(ResumeContext);
 
     return (
         <>
