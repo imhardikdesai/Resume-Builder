@@ -3,23 +3,6 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Link as ReachLink } from 'react-router-dom'
 import logo from './../../Assets/logo.png';
 
-const Links = ['Home', 'About'];
-
-const NavLink = (link) => (
-
-    <ReachLink
-        px={2}
-        py={1}
-        rounded={'md'}
-        _hover={{
-            textDecoration: 'none',
-            bg: useColorModeValue('gray.200', 'gray.700'),
-        }}
-        to={'/' + (link.children).toLowerCase()}
-        key={link.children}>
-        {link.children}
-    </ReachLink>
-);
 
 export default function Navbar() {
     const { colorMode, toggleColorMode } = useColorMode();
@@ -36,9 +19,8 @@ export default function Navbar() {
                             as={'nav'}
                             spacing={4}
                             display={{ base: 'none', md: 'flex' }}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: 'gray.200' }} to={'/'} >Home </ReachLink>
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: 'gray.200' }} to={'/about'}> About</ReachLink>
                         </HStack>
                         <Button onClick={toggleColorMode}>
                             {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -58,9 +40,8 @@ export default function Navbar() {
                 {isOpen ? (
                     <Box pb={4} display={{ md: 'none' }}>
                         <Stack as={'nav'} spacing={4}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: 'gray.200' }} to={'/'} >Home </ReachLink>
+                            <ReachLink px={2} py={1} rounded={'md'} _hover={{ textDecoration: 'none', bg: 'gray.200' }} to={'/about'}> About</ReachLink>
                         </Stack>
                     </Box>
                 ) : null}

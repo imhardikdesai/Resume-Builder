@@ -16,11 +16,11 @@ const Theme1 = (props) => {
     const { awards } = themeData.awardData;
     return (
         <>
-            <div id="section-to-print" ref={componentRef}>
-                <div id="theme1">
+            <Box id="section-to-print" ref={componentRef}>
+                <Box _dark={{ border: '1px solid white' }} id="theme1">
                     {/* Personal Info  */}
                     <header id='info' className='text-center mt-2'>
-                        <Heading as='h2' size='2xl' noOfLines={1}>
+                        <Heading as='h2' size='2xl' className='mb-2'>
                             {name}
                         </Heading>
                         <Text fontSize='md' className='text-muted my-1 '>
@@ -34,25 +34,24 @@ const Theme1 = (props) => {
                     </header>
                     {/* Skills Part  */}
                     <section id="skills" className='my-2'>
-                        <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                        <Heading _dark={{ color: 'gray.800' }} bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                             TECHNICAL SKILLS
                         </Heading>
 
                         <Box id='skills-set' className='basic-set d-flex justify-content-center align-items-center'>
-                            <div className='skillBox'>
+                            <Box className='skillBox'>
                                 {
                                     skill.split(',').map((element, index) => <Badge key={index} className='skill-badge' variant='solid'>{element}</Badge>)
                                 }
-                            </div>
+                            </Box>
                         </Box>
                     </section>
 
                     {/* Project Section  */}
                     {
                         !checkProj &&
-
                         <section id="projects" className='my-2'>
-                            <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                            <Heading _dark={{ color: 'gray.800' }} bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                                 PROJECTS
                             </Heading>
 
@@ -60,9 +59,9 @@ const Theme1 = (props) => {
                                 {
                                     Object.entries(projectTitles).map((element, index) => {
                                         return (
-                                            <div key={index} className="subBox">
+                                            <Box key={index} className="subBox">
                                                 <Text className='sub-title'>{element[1]}</Text>
-                                                <div className='sub-details'>
+                                                <Box className='sub-details'>
                                                     {
                                                         (Object.entries(projectDesc)[index] === undefined)
                                                             ?
@@ -72,8 +71,8 @@ const Theme1 = (props) => {
                                                                 return <li key={index}>{element}</li>
                                                             })
                                                     }
-                                                </div>
-                                            </div>
+                                                </Box>
+                                            </Box>
                                         )
                                     })
                                 }
@@ -84,7 +83,7 @@ const Theme1 = (props) => {
                     {/* Education Part  */}
 
                     <section id="education" className='my-2'>
-                        <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                        <Heading _dark={{ color: 'gray.800' }} bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                             EDUCATION
                         </Heading>
 
@@ -92,9 +91,9 @@ const Theme1 = (props) => {
                             {
                                 Object.entries(educationTitles).map((element, index) => {
                                     return (
-                                        <div key={index} className="subBox">
+                                        <Box key={index} className="subBox">
                                             <Text className='sub-title'>{element[1]}</Text>
-                                            <div className='sub-details'>
+                                            <Box className='sub-details'>
                                                 {
                                                     (Object.entries(educationDesc)[index] === undefined)
                                                         ?
@@ -104,8 +103,8 @@ const Theme1 = (props) => {
                                                             return <li key={index}>{element}</li>
                                                         })
                                                 }
-                                            </div>
-                                        </div>
+                                            </Box>
+                                        </Box>
                                     )
                                 })
                             }
@@ -116,7 +115,7 @@ const Theme1 = (props) => {
                     {
                         !checkWork &&
                         <section id="experience" className='my-2'>
-                            <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                            <Heading _dark={{ color: 'gray.800' }} bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                                 WORK EXPERIENCE
                             </Heading>
 
@@ -124,9 +123,9 @@ const Theme1 = (props) => {
                                 {
                                     Object.entries(workTitles).map((element, index) => {
                                         return (
-                                            <div key={index} className="subBox">
+                                            <Box key={index} className="subBox">
                                                 <Text className='sub-title'>{element[1]}</Text>
-                                                <div className='sub-details'>
+                                                <Box className='sub-details'>
                                                     {
                                                         (Object.entries(workDesc)[index] === undefined)
                                                             ?
@@ -136,8 +135,8 @@ const Theme1 = (props) => {
                                                                 return <li key={index}>{element}</li>
                                                             })
                                                     }
-                                                </div>
-                                            </div>
+                                                </Box>
+                                            </Box>
                                         )
                                     })
                                 }
@@ -148,24 +147,24 @@ const Theme1 = (props) => {
                     {
                         !checkAward &&
                         <section id="awards" className='my-2'>
-                            <Heading bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
+                            <Heading _dark={{ color: 'gray.800' }} bg={'#D2E4E1'} as='h3' size='md' px={20} py={2}>
                                 AWARDS & ACHIEVEMENTS
                             </Heading>
 
                             <Box id='award-set' className='basic-set d-flex justify-content-between align-items-center'>
-                                <div>
+                                <Box>
                                     {
                                         awards.split(',').map((element, index) => {
                                             return <li key={index}>{element}</li>
                                         })
                                     }
 
-                                </div>
+                                </Box>
                             </Box>
                         </section>
                     }
-                </div>
-            </div>
+                </Box>
+            </Box>
         </>
     )
 }

@@ -1,15 +1,13 @@
 import { Flex, Container, Heading, Stack, Text, Button, Box } from '@chakra-ui/react';
 import './introduction.css';
 import homeLogo from './../../Assets/home-logo.png'
-// import { Link as ReachLink } from 'react-router-dom'
 import { Image } from '@chakra-ui/react'
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import ResumeContext from '../../Context/ResumeContext';
 import ThemeTemplateData from '../../db/ThemeTemplateData';
 
 export default function Introduction() {
-    const { setCurrentTheme, showComponent, setShowComponent } = useContext(ResumeContext);
-    const [selectBtn, setSelectBtn] = useState(true)
+    const { selectBtn, setSelectBtn, setCurrentTheme, showComponent, setShowComponent } = useContext(ResumeContext);
 
     const handleSelectTemplate = () => {
         setSelectBtn(!selectBtn)
@@ -49,22 +47,22 @@ export default function Introduction() {
                                 Resume builder tools that assemble well-formatted resume. Through a resume builder, you can create a professional-looking resume in a few easy steps. This resume builder offer different template options, so you can select the template that best fits your needs and style.
                             </Text>
 
-                            <Flex textAlign={'start'} flexDirection={'column'} w={'full'}>
+                            <Flex _dark={{ color: 'gray.50' }} textAlign={'start'} flexDirection={'column'} w={'full'}>
                                 <Box className='Bullet_Points'>
                                     <Button>1</Button>
-                                    <Text color={'gray.900'} fontSize={'xl'}>
+                                    <Text _dark={{ color: "gray.400" }} color={'gray.900'} fontSize={'xl'}>
                                         Select a template from our collection.
                                     </Text>
                                 </Box>
                                 <Box className='Bullet_Points'>
                                     <Button>2</Button>
-                                    <Text color={'gray.900'} fontSize={'xl'}>
+                                    <Text _dark={{ color: "gray.400" }} color={'gray.900'} fontSize={'xl'}>
                                         Build you resume using our easy to use resume builder.
                                     </Text>
                                 </Box>
                                 <Box className='Bullet_Points'>
                                     <Button>3</Button>
-                                    <Text color={'gray.900'} fontSize={'xl'}>
+                                    <Text _dark={{ color: "gray.400" }} color={'gray.900'} fontSize={'xl'}>
                                         Download your resume.
                                     </Text>
                                 </Box>
@@ -94,6 +92,7 @@ export default function Introduction() {
                             onClick={handleSelectTemplate}
                             rounded={'full'}
                             px={6}
+                            className='mb-4'
                             colorScheme={'teal'}
                             bg={'#38B2AC'}
                             _hover={{ bg: '#319795' }}>
