@@ -23,9 +23,9 @@ const BuilderArea = (props) => {
                     {props.theme}
                 </div>
             </div>
-            <div className="d-flex justify-content-center">
-                <Button className='m-5' colorScheme={'teal'} variant={'outline'} onClick={handlePrint}>Print</Button>
-                <Button className='m-5' colorScheme={'teal'} variant={'outline'} onClick={handleSelectNewTemplate}>Select Another Template</Button>
+            <div className="d-flex flex-wrap justify-content-center">
+                <Button className='mx-2 my-5' colorScheme={'teal'} variant={'outline'} onClick={handlePrint}>Print</Button>
+                <Button className='mx-2 my-5' colorScheme={'teal'} variant={'outline'} onClick={handleSelectNewTemplate}>Select Another Template</Button>
             </div>
             <Footer />
         </>
