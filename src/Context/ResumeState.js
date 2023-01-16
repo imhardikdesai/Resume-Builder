@@ -49,8 +49,9 @@ const ResumeState = (props) => {
     const [checkWork, setCheckWork] = useState(false);
     const [checkAward, setCheckAward] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [showComponent, setShowComponent] = useState(false);
-    const [currentTheme, setCurrentTheme] = useState('');
+    //Change bellow two state for create any new Theme
+    const [showComponent, setShowComponent] = useState(true);
+    const [currentTheme, setCurrentTheme] = useState('Theme2');
     const [selectBtn, setSelectBtn] = useState(true)
 
 

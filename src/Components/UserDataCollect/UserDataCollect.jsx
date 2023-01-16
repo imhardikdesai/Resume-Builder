@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './userCollectData.css'
+import { IoMdCloudUpload } from 'react-icons/io'
 import { FormControl, Input, Heading, Textarea, Button, Switch } from '@chakra-ui/react'
 import ResumeContext from '../../Context/ResumeContext'
 const UserDataCollect = () => {
+
+
     const { themeData, checkAward, setCheckAward, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork } = useContext(ResumeContext)
 
 
@@ -15,13 +18,15 @@ const UserDataCollect = () => {
     const [projectData, setProjectData] = useState({ 'projectTitles': { pTitle1: "Project Title " }, 'projectDesc': { pDescription1: "Project Description are Shown here , with Bullet Points" } })
     const [educationData, setEducationData] = useState({ 'educationTitles': { eTitle1: "Education Title" }, 'educationDesc': { eDescription1: "Education Description are Shown here , with Bullet Points" } })
     const [workData, setWorkData] = useState({ 'workTitles': { wTitle1: "Work Title" }, 'workDesc': { wDescription1: "Work Description are Shown here , with Bullet Points" } })
-    const [personalData, setPersonalData] = useState({ name: "Your Name", profile: "Work Profile", address: "Address Line", phone: "Phone Number", email: "Email Address", skill: 'Your, Skills, are, shown, here', })
+    const [personalData, setPersonalData] = useState({ profileImage: '', name: "Your Name", summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing eli', profile: "Work Profile", address: "Address Line", phone: "Phone Number", email: "Email Address", skill: 'Your, Skills, are, shown, here', })
     const [awardData, setAwardData] = useState({ awards: 'Your Awards are shown here' })
-
+    const [src, setSrc] = useState('https://www.w3schools.com/howto/img_avatar.png')
     // To Add Personal Data to the State
     const handleChangePersonal = (e) => {
         const { name, value } = e.target
         setPersonalData({ ...personalData, [name]: value })
+        console.log(e.target.files);
+        setSrc(URL.createObjectURL(e.target.files[0]))
     }
     // To Add Project Data to the State
     const handleChangeProject = (e) => {
@@ -138,7 +143,20 @@ const UserDataCollect = () => {
                     <hr />
 
                     <FormControl isRequired className='my-2'>
+                        <div className='file'>
+                            <label htmlFor='input-file'>
+                                <i className="material-icons"><IoMdCloudUpload size={30} />
+                                </i>Select a file
+                            </label>
+                            <input accept="image/*" name='profileImage' onChange={handleChangePersonal} id='input-file' type='file' />
+                            <img id="blah" src={src} alt="your profile preview" />
+                        </div>
+                    </FormControl>
+                    <FormControl isRequired className='my-2'>
                         <Input name='name' onChange={handleChangePersonal} type={'text'} placeholder='Your Name' />
+                    </FormControl>
+                    <FormControl isRequired className='my-2'>
+                        <Input name='summary' onChange={handleChangePersonal} type={'text'} placeholder='Your Summary' />
                     </FormControl>
                     <FormControl isRequired className='my-2'>
                         <Input name='profile' onChange={handleChangePersonal} type={'text'} placeholder='Work Profile' />

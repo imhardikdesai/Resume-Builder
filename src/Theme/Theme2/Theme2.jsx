@@ -1,11 +1,14 @@
 import React from 'react'
+import { Box } from '@chakra-ui/react';
 
 const Theme2 = (props) => {
     const { componentRef } = props;
     return (
-        <div id="section-to-print" ref={componentRef}>
-            Theme 2
-        </div>
+        <Box id="section-to-print" ref={componentRef}>
+            <Box id="theme2">
+                Theme 2
+            </Box>
+        </Box>
     )
 }
 
