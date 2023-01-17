@@ -16,14 +16,43 @@ const ResumeState = (props) => {
         }
     });
 
+    // const initialData = {
+    //     personalData: {
+    //         profileImage: 'https://www.w3schools.com/howto/img_avatar.png',
+    //         name: "Your Name",
+    //         profile: "Work Profile",
+    //         address: "Address Line",
+    //         phone: "Phone Number",
+    //         email: "Email Address",
+    //         skill: 'Your, Skills, are, shown, here',
+    //     },
+    //     projectData: {
+    //         projectTitles: { pTitle1: "Project Title 1" },
+    //         projectDesc: { pDescription1: "Project Description 1" },
+    //     },
+    //     educationData: {
+    //         educationTitles: { eTitle1: "Education Title 1" },
+    //         educationDesc: { eDescription1: "Education Description 1" },
+    //     },
+    //     workData: {
+    //         workTitles: { wTitle1: "Work Title 1" },
+    //         workDesc: { wDescription1: "Work Description 1" },
+    //     },
+    //     awardData: {
+    //         awards: ''
+    //     }
+    // }
+
     const initialData = {
         personalData: {
-            name: "Your Name",
-            profile: "Work Profile",
-            address: "Address Line",
-            phone: "Phone Number",
-            email: "Email Address",
-            skill: 'Your, Skills, are, shown, here',
+            profileImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNI3kQLeYMnpy05PhEiuzS1rtRmNVL7VKvwcE4ACmQSQT1rRmUO5mHLyjH-mGHq0ueUQY&usqp=CAU',
+            name: "OLIVIA WILSON",
+            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            profile: "SECRETARY",
+            address: "123 Anywhere St., Any City, USA",
+            phone: "+123-456-7890",
+            email: "hello@tempmail.com",
+            skill: 'HTML, CSS, JAVA, PYTHON, JAVASCRIPT',
         },
         projectData: {
             projectTitles: { pTitle1: "Project Title 1" },
@@ -43,7 +72,6 @@ const ResumeState = (props) => {
     }
 
 
-    // const [themeData, setThemeData] = useState(initialData)
     const [themeData, setThemeData] = useState(initialData)
     const [checkProj, setCheckProj] = useState(false);
     const [checkWork, setCheckWork] = useState(false);
@@ -56,7 +84,7 @@ const ResumeState = (props) => {
 
 
     return (
-        <ResumeContext.Provider value={{ selectBtn, setSelectBtn, checkAward, setCheckAward, componentRef, handlePrint, currentTheme, setCurrentTheme, showComponent, setShowComponent, loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
+        <ResumeContext.Provider value={{ initialData, selectBtn, setSelectBtn, checkAward, setCheckAward, componentRef, handlePrint, currentTheme, setCurrentTheme, showComponent, setShowComponent, loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>
             {props.children}
         </ResumeContext.Provider >
     )

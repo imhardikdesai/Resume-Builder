@@ -81,7 +81,7 @@ textarea {
     background-color: hsl(204, 86%, 91%);
 }
 
-#blah {
+.blah {
     height: 59px;
     border-radius: 7px;
     margin: 0px 10px;
