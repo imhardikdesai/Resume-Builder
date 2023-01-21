@@ -32,11 +32,11 @@ Here are some screenshots of the project to give you an idea of its features and
 ## Getting Started
 1. Clone this repository to your local machine
 ```bash
-git clone https://github.com/yourusername/resume-builder-website.git
+git clone https://github.com/imhardikdesai/Resume-Builder.git
 ```
 2. Navigate to the project directory
 ```bash
-cd resume-builder-website
+cd resume-builder
 ```
 3. Install dependencies
 ```bash
@@ -44,7 +44,7 @@ npm install
 ```
 4. Run the app
 ```bash
-npm start
+npm run start
 ```
 5. Open http://localhost:3000 in your browser to see the application running
 
