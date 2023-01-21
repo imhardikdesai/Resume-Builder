@@ -158,7 +158,6 @@ const Theme1 = (props) => {
                                             return <li key={index}>{element}</li>
                                         })
                                     }
-
                                 </Box>
                             </Box>
                         </section>

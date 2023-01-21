@@ -6,7 +6,7 @@ import ResumeContext from '../../Context/ResumeContext'
 const UserDataCollect = () => {
 
 
-    const { initialData, themeData, checkAward, setCheckAward, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork } = useContext(ResumeContext)
+    const { themeData, checkAward, setCheckAward, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork } = useContext(ResumeContext)
 
 
     const [projectCount, setProjectCount] = useState(0)
@@ -129,9 +129,9 @@ const UserDataCollect = () => {
         setAwardData({ ...awardData, [name]: value })
     }
     useEffect(() => {
-        // setThemeData({ ...themeData, personalData, projectData, educationData, workData, awardData })
-        setThemeData(initialData)
-    }, [initialData, themeData, personalData, setThemeData, projectData, educationData, workData, awardData])
+        setThemeData({ ...themeData, personalData, projectData, educationData, workData, awardData })
+       
+    }, [themeData, personalData, setThemeData, projectData, educationData, workData, awardData])
 
     return (
         <>
