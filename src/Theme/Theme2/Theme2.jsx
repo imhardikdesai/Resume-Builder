@@ -17,7 +17,7 @@ const Theme2 = (props) => {
     return (
         <Box id="section-to-print" ref={componentRef}>
             <Box id="theme2">
-                <header id='info' className='text-center m-2 d-flex justify-content-between'>
+                <header id='info' className='text-center m-2 d-flex justify-content-between align-items-center'>
                     <Box className='info-text text-start'>
                         <Heading as='h2' size='xl' className='mb-2'>
                             {name}
@@ -25,7 +25,7 @@ const Theme2 = (props) => {
                         <Text fontWeight={'500'} fontSize='xl' className='mt-1 mb-2'>
                             {profile}
                         </Text>
-                        <Text width={'400px'} fontSize='sm' className='mt-1 mb-2'>
+                        <Text width={'400px'} fontSize='sm' className='mt-1 mb-2 summary-text'>
                             {summary}
                         </Text>
                     </Box>

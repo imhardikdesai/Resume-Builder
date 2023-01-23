@@ -4,7 +4,8 @@
 }
 
 #theme2 {
-    margin: 50px 70px;
+    /* margin: 50px 70px; */
+    padding: 47px 60px;
 }
 
 #resume-avatar {
@@ -12,4 +13,31 @@
     height: 150px;
     object-fit: cover;
     object-position: 50% 25%;
+}
+
+/* media quires */
+@media only screen and (max-width: 715px) {
+    #theme2 {
+        padding: 47px 19px;
+    }
+   
+    #resume-avatar {
+        width: auto;
+        height: 105px;
+    }
+
+    .info-text {
+        width: 290px;
+    }
+
+    .summary-text {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    #theme2 {
+        padding: 14px 10px;
+    }
+
 }
