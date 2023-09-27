@@ -2,9 +2,7 @@ import React, { useContext } from "react";
 import {
   Box,
   Text,
-  Image,
   Heading,
-  Badge,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
@@ -13,7 +11,7 @@ import ResumeContext from "../../Context/ResumeContext";
 
 const Theme3 = (props) => {
   const { componentRef, themeData } = props;
-  const { name, address, phone, email, profile, profileImage, summary, skill } =
+  const { name, address, phone, email, profile, summary, skill } =
     themeData.personalData;
 
   const { checkProj, checkWork, checkAward } = useContext(ResumeContext);
@@ -246,86 +244,3 @@ const Theme3 = (props) => {
 
 export default Theme3;
 
-{
-  /* <section className='partition-2'>
-
-<Box id='education-area'>
-    <Heading fontSize='2xl' className='my-2'>Education</Heading>
-    {
-        Object.entries(educationTitles).map((element, index) => {
-            return (
-                <Box key={index} className="mt-3">
-                    <Heading fontSize='md' className='my-2'>{element[1]}</Heading>
-                    <Box className='sub-details'>
-                        {
-                            (Object.entries(educationDesc)[index] === undefined)
-                                ?
-                                null
-                                :
-                                Object.entries(educationDesc)[index][1].split(',').map((element, index) => {
-                                    return <li key={index}>{element}</li>
-                                })
-                        }
-                    </Box>
-                </Box>
-            )
-        })
-    }
-</Box>
-
-{
-    !checkProj &&
-    <Box id='project-area'>
-        <Heading fontSize='2xl' className='mt-4'>Projects</Heading>
-        {
-            Object.entries(projectTitles).map((element, index) => {
-                return (
-                    <Box key={index} className="mt-1">
-                        <Heading fontSize='md' className='my-2'>{element[1]}</Heading>
-                        <Box className='sub-details'>
-                            {
-                                (Object.entries(projectDesc)[index] === undefined)
-                                    ?
-                                    null
-                                    :
-                                    Object.entries(projectDesc)[index][1].split(',').map((element, index) => {
-                                        return <li key={index}>{element}</li>
-                                    })
-                            }
-                        </Box>
-                    </Box>
-                )
-            })
-        }
-    </Box>
-}
-{
-    !checkWork &&
-    <Box id='experience-area'>
-        <Heading fontSize='2xl' className='mt-4'>Work Experience</Heading>
-        {
-            Object.entries(workTitles).map((element, index) => {
-                return (
-                    <Box key={index} className="mt-1">
-                        <Heading fontSize='md' className='my-2'>{element[1]}</Heading>
-                        <Box className='sub-details'>
-                            {
-                                (Object.entries(workDesc)[index] === undefined)
-                                    ?
-                                    null
-                                    :
-                                    Object.entries(workDesc)[index][1].split(',').map((element, index) => {
-                                        return <li key={index}>{element}</li>
-                                    })
-                            }
-                        </Box>
-                    </Box>
-                )
-            })
-        }
-    </Box>
-}
-
-
-</section> */
-}
