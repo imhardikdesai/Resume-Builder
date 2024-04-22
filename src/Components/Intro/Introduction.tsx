@@ -1,9 +1,8 @@
 import { Flex, Container, Heading, Stack, Text, Button, Box } from '@chakra-ui/react';
 import './introduction.css';
-import homeLogo from './../../Assets/home-logo.png'
 import { Image } from '@chakra-ui/react'
 import { useContext } from 'react';
-import ResumeContext from '../../Context/ResumeContext';
+import ResumeContext from '../../context/ResumeContext';
 import ThemeTemplateData from '../../db/ThemeTemplateData';
 import { Helmet } from 'react-helmet';
 
@@ -100,7 +99,7 @@ export default function Introduction() {
                 {
                     selectBtn ?
                         <Stack>
-                            <Image src={homeLogo} alt='home logo' my={'4'} />
+                            <Image src={'/assets/home-logo.png'} alt='home logo' my={'4'} />
                             <Button
                                 onClick={handleSelectTemplate}
                                 rounded={'full'}

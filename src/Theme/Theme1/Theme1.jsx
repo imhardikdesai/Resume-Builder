@@ -4,7 +4,7 @@ import './theme1.css'
 import { ImLocation } from 'react-icons/im'
 import { GrMail } from 'react-icons/gr'
 import { BsFillTelephoneFill } from 'react-icons/bs'
-import ResumeContext from '../../Context/ResumeContext'
+import ResumeContext from '../../context/ResumeContext'
 
 const Theme1 = (props) => {
     const { checkProj, checkWork, checkAward } = useContext(ResumeContext)
