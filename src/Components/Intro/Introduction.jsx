@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import ResumeContext from '../../Context/ResumeContext';
 import ThemeTemplateData from '../../db/ThemeTemplateData';
 import { Helmet } from 'react-helmet';
+// import a from "../../Assets/image5.png"
 
 export default function Introduction() {
     const { selectBtn, setSelectBtn, setCurrentTheme, showComponent, setShowComponent } = useContext(ResumeContext);

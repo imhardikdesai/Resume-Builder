@@ -19,7 +19,7 @@ const BuilderArea = (props) => {
 
             <div id='main-box' className="d-flex justify-content-between flex-wrap mt-4 mx-2">
                 <UserDataCollect />
-                <div id='theme-box-border'>
+                <div id='theme-box-border flex-1'>
                     {props.theme}
                 </div>
             </div>

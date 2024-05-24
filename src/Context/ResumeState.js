@@ -53,7 +53,7 @@ const ResumeState = (props) => {
     const [showComponent, setShowComponent] = useState(false);
     const [currentTheme, setCurrentTheme] = useState('Theme1');
     const [selectBtn, setSelectBtn] = useState(true)
-
+    
 
     return (
         <ResumeContext.Provider value={{ initialData, selectBtn, setSelectBtn, checkAward, setCheckAward, componentRef, handlePrint, currentTheme, setCurrentTheme, showComponent, setShowComponent, loading, setLoading, themeData, setThemeData, checkProj, checkWork, setCheckProj, setCheckWork }}>

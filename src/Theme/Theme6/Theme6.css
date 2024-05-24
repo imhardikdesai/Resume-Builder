@@ -1,0 +1,86 @@
+/* Theme6.css */
+
+#theme6 {
+  background-color: #f0f4f8;
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#info {
+  border-bottom: 3px solid #2b6cb0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.info-text h2 {
+  color: #2b6cb0;
+  margin-bottom: 10px;
+}
+
+.info-text p {
+  margin: 5px 0;
+}
+
+.summary-text {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.border {
+  border-bottom: 1px solid #e2e8f0;
+  margin: 20px 0;
+}
+
+.bottom-part {
+  display: flex;
+  margin-top: 20px;
+}
+
+.sections {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.sub-details {
+  margin-left: 20px;
+}
+
+.sub-details li {
+  margin-bottom: 5px;
+}
+
+.heading {
+  background-color: #2b6cb0;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+}
+
+.grid-item .bullet {
+  background: #2b6cb0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+@media print {
+  #theme6 {
+    box-shadow: none;
+  }
+}

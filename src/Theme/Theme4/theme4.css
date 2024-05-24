@@ -1,0 +1,66 @@
+/* theme3.css */
+
+#theme3 {
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+#info {
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 20px;
+}
+
+.info-text h2 {
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.info-text p {
+  margin: 5px 0;
+}
+
+.bottom-part {
+  margin-top: 20px;
+}
+
+.sections {
+  width: 100%;
+}
+
+.sections .my-4 {
+  margin: 20px 0;
+}
+
+.sections h3 {
+  color: #4a90e2;
+}
+
+.summary-text, .info-text p, .sub-details li, .sub-details p {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  width: 100%;  /* Ensure content does not cause overflow */
+}
+
+.border {
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.sub-details {
+  margin-left: 25px;
+}
+
+@media print {
+  #theme3 {
+    padding: 0;
+  }
+
+  .bottom-part {
+    margin-top: 0;
+  }
+
+  .border {
+    border: none;
+  }
+}
