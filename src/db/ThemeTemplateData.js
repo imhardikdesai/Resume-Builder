@@ -16,8 +16,33 @@ const ThemeTemplateData = [
     },
     {
         id: 'Theme4',
-        imageSrc: 'https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg',
+        imageSrc: './image5.png',
         imageAlt: 'Theme4'
+    },
+    {
+        id: 'Theme5',
+        imageSrc: './image4.png',
+        imageAlt: 'Theme5'
+    },
+    {
+        id: 'Theme6',
+        imageSrc: 'https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg',
+        imageAlt: 'Theme6'
+    },
+    {
+        id: 'Theme7',
+        imageSrc: 'https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg',
+        imageAlt: 'Theme7'
+    },
+    {
+        id: 'Theme8',
+        imageSrc: './image.png',
+        imageAlt: 'Theme8'
+    },
+    {
+        id: 'Theme9',
+        imageSrc: 'https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg',
+        imageAlt: 'Theme9'
     }
 ]
 

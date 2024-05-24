@@ -1,0 +1,72 @@
+/* theme8.css */
+
+#theme8 {
+  background-color: #f8f9fa;
+  color: #343a40;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#info {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-text h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.info-text p {
+  margin: 5px 0;
+  color: #6c757d;
+}
+
+.summary-text {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.border {
+  border-bottom: 1px solid #dee2e6;
+  margin: 20px 0;
+}
+
+.partition-1,
+.partition-2 {
+  width: 48%;
+}
+
+.bottom-part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-part .sub-details {
+  margin-left: 20px;
+}
+
+.sub-details li {
+  margin-bottom: 5px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+@media print {
+  #theme8 {
+    box-shadow: none;
+  }
+}
