@@ -24,8 +24,13 @@ const ThemeTemplateData = [
   },
   {
     id: "Theme5",
-    imageSrc: "https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg",
+    imageSrc:"https://cdn.enhancv.com/single_column_traditional_resume_template_84a04707cf.png",
     imageAlt: "Theme5",
+  },
+  {
+    id: "Theme6",
+    imageSrc: "https://testanalytics-5e6e3.web.app/static/media/4.af60bc02.jpg",
+    imageAlt: "Theme6",
   },
 ];
 
