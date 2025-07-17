@@ -9,6 +9,8 @@ Welcome to our Resume Builder Website! Our website allows users to easily create
 - Dark mode for easy viewing
 - Image upload for profile picture
 
+![Star History Chart](https://api.star-history.com/svg?repos=imhardikdesai/Resume-Builder&type=Dat)
+
 ## Screenshots
 Here are some screenshots of the project to give you an idea of its features and functionality:
 
