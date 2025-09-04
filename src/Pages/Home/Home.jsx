@@ -6,12 +6,12 @@ import Theme1 from "./../../Theme/Theme1/Theme1";
 import Theme2 from "../../Theme/Theme2/Theme2";
 import Theme3 from "../../Theme/Theme3/Theme3";
 import Theme4 from "../../Theme/Theme4/theme4";
+import Theme5 from "../../Theme/Theme5/Theme5";
 import ErrorPage from "../Error/ErrorPage";
 
 const Home = () => {
   const { currentTheme, showComponent, themeData, componentRef } =
     useContext(ResumeContext);
-
   return (
     <>
       {!showComponent && <Introduction />}
@@ -35,7 +35,12 @@ const Home = () => {
           theme={<Theme4 componentRef={componentRef} themeData={themeData} />}
         />
       )}
-      {showComponent && currentTheme === "Theme5" && <ErrorPage />}
+      {showComponent && currentTheme === "Theme5" && (
+        <BuilderArea
+          theme={<Theme5 componentRef={componentRef} themeData={themeData} />}
+        />
+      )}
+      {showComponent && currentTheme === "Theme6" && <ErrorPage />}
       {}
     </>
   );

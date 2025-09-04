@@ -1,0 +1,71 @@
+/* Container */
+.single-column-theme {
+    width: 8.5in;          /* Good for printing A4/Letter size */
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Headings */
+  .single-column-theme h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .single-column-theme h2 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.25rem;
+  }
+  
+  .single-column-theme h3 {
+    margin: 0.75rem 0 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Contact info and summary */
+  .contact-info {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .summary p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  
+  /* Generic sections */
+  .section {
+    margin: 1rem 0;
+  }
+  
+  /* Lists for bullet points */
+  .sub-details ul {
+    list-style-type: disc;
+    margin: 0.5rem 0 0.5rem 1.5rem;
+    padding: 0;
+  }
+  
+  /* Skills badges */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .skills-list span {
+    background-color: #000;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+  
